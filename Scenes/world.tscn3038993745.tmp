@@ -1,0 +1,358 @@
+[gd_scene load_steps=7 format=3 uid="uid://c61ve04onl3vb"]
+
+[ext_resource type="Script" uid="uid://bxj2hqisr0btm" path="res://Scripts/world.gd" id="1_a02cp"]
+[ext_resource type="Theme" uid="uid://b8k7he35y0nbg" path="res://Resources/Themes/info_resource_count_theme.tres" id="2_5a7ea"]
+[ext_resource type="Script" uid="uid://dscma456prepg" path="res://Scenes/inventory_ui.gd" id="2_8j60k"]
+[ext_resource type="Theme" uid="uid://cinfxqyorjqfa" path="res://Resources/Themes/label_theme.tres" id="2_go701"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_go701"]
+bg_color = Color(0.229022, 0.149152, 0.145437, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5a7ea"]
+bg_color = Color(0.229022, 0.149152, 0.145437, 1)
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a02cp")
+
+[node name="ButtonUI" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 3
+alignment_vertical = 2
+
+[node name="ButtonPanel" type="PanelContainer" parent="ButtonUI"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_go701")
+
+[node name="MarginContainer" type="MarginContainer" parent="ButtonUI/ButtonPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ControlButtons" type="BoxContainer" parent="ButtonUI/ButtonPanel/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="MineButton" type="Button" parent="ButtonUI/ButtonPanel/MarginContainer/ControlButtons"]
+layout_mode = 2
+text = "Mine"
+
+[node name="Spacer" type="Control" parent="ButtonUI/ButtonPanel/MarginContainer/ControlButtons"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="DwarfButton" type="Button" parent="ButtonUI/ButtonPanel/MarginContainer/ControlButtons"]
+layout_mode = 2
+text = "Dwarf"
+
+[node name="Spacer2" type="Control" parent="ButtonUI/ButtonPanel/MarginContainer/ControlButtons"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="ToolButton" type="Button" parent="ButtonUI/ButtonPanel/MarginContainer/ControlButtons"]
+layout_mode = 2
+text = "Tool"
+
+[node name="InventoryUI" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+alignment_horizontal = 0
+script = ExtResource("2_8j60k")
+
+[node name="InventoryPanel" type="PanelContainer" parent="InventoryUI"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5a7ea")
+
+[node name="MarginContainer" type="MarginContainer" parent="InventoryUI/InventoryPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="GridContainer" type="GridContainer" parent="InventoryUI/InventoryPanel/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+columns = 2
+
+[node name="MarginEarth" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="Earth" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginEarth"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_go701")
+text = "Earth"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginEarthQuant" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="EarthQuant" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginEarthQuant"]
+layout_mode = 2
+theme = ExtResource("2_go701")
+text = "0.0"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="MarginCoal" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="Coal" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginCoal"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_go701")
+text = "Coal"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginCoalQuant" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="CoalQuant" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginCoalQuant"]
+layout_mode = 2
+theme = ExtResource("2_go701")
+text = "0.0"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="MarginStone" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="Stone" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginStone"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_go701")
+text = "Stone"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginStoneQuant" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="StoneQuant" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginStoneQuant"]
+layout_mode = 2
+theme = ExtResource("2_go701")
+text = "0.0"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="MarginIron" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="Iron" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginIron"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_go701")
+text = "Iron"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginIronQuant" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="IronQuant" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginIronQuant"]
+layout_mode = 2
+theme = ExtResource("2_go701")
+text = "0.0"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="MarginSteel" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="Steel" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginSteel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_go701")
+text = "Steel"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginSteelQuant" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="SteelQuant" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginSteelQuant"]
+layout_mode = 2
+theme = ExtResource("2_go701")
+text = "0.0"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="MarginTitanium" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="Titanium" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginTitanium"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_go701")
+text = "Titanium"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginTitaniumQuant" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="TitaniumQuant" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginTitaniumQuant"]
+layout_mode = 2
+theme = ExtResource("2_go701")
+text = "0.0"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="MarginGold" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="Gold" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginGold"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_go701")
+text = "Gold"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginGoldQuant" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="GoldQuant" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginGoldQuant"]
+layout_mode = 2
+theme = ExtResource("2_go701")
+text = "0.0"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="MarginPlatinum" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="Platinum" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginPlatinum"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_go701")
+text = "Platinum
+"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginPlatinumQuant" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="PlatinumQuant" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginPlatinumQuant"]
+layout_mode = 2
+theme = ExtResource("2_go701")
+text = "0.0"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="MarginOrichalcum" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="Orichalcum" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginOrichalcum"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_go701")
+text = "Orichalcum"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginOrichalcumQuant" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="OrichalcumQuant" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginOrichalcumQuant"]
+layout_mode = 2
+theme = ExtResource("2_go701")
+text = "0.0"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -10
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.180005, 0.180005, 0.180005, 1)
+metadata/_edit_lock_ = true
+
+[node name="Timer" type="Timer" parent="."]

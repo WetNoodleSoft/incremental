@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b1110g5minrar"]
+
+[ext_resource type="Script" uid="uid://cdha60lehs3w5" path="res://Scripts/clock.gd" id="1_lq8tk"]
+
+[resource]
+script = ExtResource("1_lq8tk")

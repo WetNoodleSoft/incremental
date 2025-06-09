@@ -1,0 +1,356 @@
+[gd_scene load_steps=6 format=3 uid="uid://c61ve04onl3vb"]
+
+[ext_resource type="Script" uid="uid://bxj2hqisr0btm" path="res://Scripts/main.gd" id="1_a02cp"]
+[ext_resource type="Theme" uid="uid://b8k7he35y0nbg" path="res://Resources/Themes/info_resource_count_theme.tres" id="2_5a7ea"]
+[ext_resource type="Theme" uid="uid://cinfxqyorjqfa" path="res://Resources/Themes/label_theme.tres" id="2_go701"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_go701"]
+bg_color = Color(0.229022, 0.149152, 0.145437, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5a7ea"]
+bg_color = Color(0.229022, 0.149152, 0.145437, 1)
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a02cp")
+
+[node name="ButtonUI" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 3
+alignment_vertical = 2
+
+[node name="ButtonPanel" type="PanelContainer" parent="ButtonUI"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_go701")
+
+[node name="MarginContainer" type="MarginContainer" parent="ButtonUI/ButtonPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ControlButtons" type="BoxContainer" parent="ButtonUI/ButtonPanel/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="MineButton" type="Button" parent="ButtonUI/ButtonPanel/MarginContainer/ControlButtons"]
+layout_mode = 2
+text = "Mine"
+
+[node name="Spacer" type="Control" parent="ButtonUI/ButtonPanel/MarginContainer/ControlButtons"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="DwarfButton" type="Button" parent="ButtonUI/ButtonPanel/MarginContainer/ControlButtons"]
+layout_mode = 2
+text = "Dwarf"
+
+[node name="Spacer2" type="Control" parent="ButtonUI/ButtonPanel/MarginContainer/ControlButtons"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="ToolButton" type="Button" parent="ButtonUI/ButtonPanel/MarginContainer/ControlButtons"]
+layout_mode = 2
+text = "Tool"
+
+[node name="ResourceUI" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+alignment_horizontal = 0
+
+[node name="ResourcePanel" type="PanelContainer" parent="ResourceUI"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5a7ea")
+
+[node name="MarginContainer" type="MarginContainer" parent="ResourceUI/ResourcePanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="GridContainer" type="GridContainer" parent="ResourceUI/ResourcePanel/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+columns = 2
+
+[node name="MarginEarth" type="MarginContainer" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="Earth" type="RichTextLabel" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer/MarginEarth"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_go701")
+text = "Earth"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginEarthQuant" type="MarginContainer" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="EarthQuant" type="RichTextLabel" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer/MarginEarthQuant"]
+layout_mode = 2
+theme = ExtResource("2_go701")
+text = "0.0"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="MarginCoal" type="MarginContainer" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="Coal" type="RichTextLabel" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer/MarginCoal"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_go701")
+text = "Coal"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginCoalQuant" type="MarginContainer" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="CoalQuant" type="RichTextLabel" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer/MarginCoalQuant"]
+layout_mode = 2
+theme = ExtResource("2_go701")
+text = "0.0"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="MarginStone" type="MarginContainer" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="Stone" type="RichTextLabel" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer/MarginStone"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_go701")
+text = "Stone"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginStoneQuant" type="MarginContainer" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="StoneQuant" type="RichTextLabel" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer/MarginStoneQuant"]
+layout_mode = 2
+theme = ExtResource("2_go701")
+text = "0.0"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="MarginIron" type="MarginContainer" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="Iron" type="RichTextLabel" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer/MarginIron"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_go701")
+text = "Iron"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginIronQuant" type="MarginContainer" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="IronQuant" type="RichTextLabel" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer/MarginIronQuant"]
+layout_mode = 2
+theme = ExtResource("2_go701")
+text = "0.0"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="MarginSteel" type="MarginContainer" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="Steel" type="RichTextLabel" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer/MarginSteel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_go701")
+text = "Steel"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginSteelQuant" type="MarginContainer" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="SteelQuant" type="RichTextLabel" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer/MarginSteelQuant"]
+layout_mode = 2
+theme = ExtResource("2_go701")
+text = "0.0"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="MarginTitanium" type="MarginContainer" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="Titanium" type="RichTextLabel" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer/MarginTitanium"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_go701")
+text = "Titanium"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginTitaniumQuant" type="MarginContainer" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="TitaniumQuant" type="RichTextLabel" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer/MarginTitaniumQuant"]
+layout_mode = 2
+theme = ExtResource("2_go701")
+text = "0.0"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="MarginGold" type="MarginContainer" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="Gold" type="RichTextLabel" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer/MarginGold"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_go701")
+text = "Gold"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginGoldQuant" type="MarginContainer" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="GoldQuant" type="RichTextLabel" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer/MarginGoldQuant"]
+layout_mode = 2
+theme = ExtResource("2_go701")
+text = "0.0"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="MarginPlatinum" type="MarginContainer" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="Platinum" type="RichTextLabel" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer/MarginPlatinum"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_go701")
+text = "Platinum
+"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginPlatinumQuant" type="MarginContainer" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="PlatinumQuant" type="RichTextLabel" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer/MarginPlatinumQuant"]
+layout_mode = 2
+theme = ExtResource("2_go701")
+text = "0.0"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="MarginContainer15" type="MarginContainer" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="Placeholder" type="RichTextLabel" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer/MarginContainer15"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_go701")
+text = "Placeholder"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer16" type="MarginContainer" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_5a7ea")
+
+[node name="PlaceholderQuant" type="RichTextLabel" parent="ResourceUI/ResourcePanel/MarginContainer/GridContainer/MarginContainer16"]
+layout_mode = 2
+theme = ExtResource("2_go701")
+text = "0.0"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -10
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.180005, 0.180005, 0.180005, 1)
+metadata/_edit_lock_ = true
+
+[node name="Timer" type="Timer" parent="."]
