@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3rigmjuayk77"]
+[gd_scene load_steps=4 format=3 uid="uid://b3rigmjuayk77"]
 
 [ext_resource type="Script" uid="uid://d4fd08t0m7k27" path="res://Scripts/start_screen.gd" id="1_i8r30"]
+[ext_resource type="Theme" uid="uid://rfivs2kl2d6y" path="res://Resources/Themes/info_margin_theme.tres" id="2_60ddj"]
+[ext_resource type="Theme" uid="uid://cinfxqyorjqfa" path="res://Resources/Themes/label_theme.tres" id="3_5e717"]
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -9,4 +11,24 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
 script = ExtResource("1_i8r30")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+theme = ExtResource("2_60ddj")
+
+[node name="Button" type="Button" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+theme = ExtResource("3_5e717")
+theme_override_font_sizes/font_size = 80
+text = "New Game"

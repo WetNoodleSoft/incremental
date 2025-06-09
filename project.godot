@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Incremental"
-run/main_scene="uid://c61ve04onl3vb"
+run/main_scene="uid://b3rigmjuayk77"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://Assets/icon.svg"
 
