@@ -1,4 +1,6 @@
-extends AspectRatioContainer
+extends Node
+
+class_name InventoryUI
 
 @onready var earth: RichTextLabel = $InventoryPanel/MarginContainer/GridContainer/MarginEarthQuant/EarthQuant
 @onready var coal: RichTextLabel = $InventoryPanel/MarginContainer/GridContainer/MarginCoalQuant/CoalQuant
@@ -11,11 +13,10 @@ extends AspectRatioContainer
 @onready var orichalcum: RichTextLabel = $InventoryPanel/MarginContainer/GridContainer/MarginOrichalcumQuant/OrichalcumQuant
 
 
-func update_label(DICTIONARY): #called on tick to update labels
-	print(DICTIONARY)
-	var inventory_labels = {"earth": earth, "coal": coal, "stone": stone, "iron": iron, "steel": steel, "titanium": titanium, "gold": gold, "platinum": platinum, "orichalcum": orichalcum}
-	for amount in DICTIONARY:
-		var label = amount
-		inventory_labels[label].text = str(DICTIONARY[amount])
+func update_labels(inventory: Dictionary) -> void: #called on tick to update labels
+	var inventory_labels: Dictionary = {"earth": earth, "coal": coal, "stone": stone, "iron": iron, "steel": steel, "titanium": titanium, "gold": gold, "platinum": platinum, "orichalcum": orichalcum}
+	for item: String in inventory:
+		var label: String = item
+		inventory_labels[label].text = str(inventory[item])
 		pass
 	return
