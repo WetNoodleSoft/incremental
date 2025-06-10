@@ -1,7 +1,6 @@
 extends Control
 
-const MATERIALINVENTORY = preload("res://Scripts/inventory.gd")
-
+@onready var start_screen: Control = $"."
 @onready var inventory_ui: InventoryUI = $InventoryUI
 @onready var controls_ui: ControlsUI = $ControlsUI
 @onready var clock: Timer = $Timer
@@ -11,12 +10,14 @@ const MATERIALINVENTORY = preload("res://Scripts/inventory.gd")
 @onready var inventory: Dictionary = {}
 
 @export var tick_interval: float = 3.0
+@export var mine_strength: float = 5.0
+
+const INVENTORY: ResourceDatabase = preload("res://Resources/inventory.tres")
 
 
 func _ready() -> void:
-	var material_inventory: ResourceDatabase = MATERIALINVENTORY.new() #initialize to inventory mgmt script
-	var initial_inventory: Dictionary = material_inventory.initialize_inventory() #link inventory dict to mgmt script
-	inventory_ui.update_labels(initial_inventory)
+	inventory = INVENTORY.check_inventory()
+	inventory_ui.update_labels(inventory)
 	clock.start(tick_interval)
 	clock.timeout.connect(_on_timer_timeout)
 	print("Timer start")
@@ -27,22 +28,20 @@ func _ready() -> void:
 	
 	
 func _process(_delta: float) -> void:
-	
 	return
 
 
 func _on_timer_timeout() -> void:
-	
+	inventory = INVENTORY.check_inventory()
 	inventory_ui.update_labels(inventory)
-	print("Tick")
+	print(Time.get_datetime_string_from_system())
 	return
 	
 
 func _mine_button() -> void:
-	controls_ui.click_mine()
+	controls_ui.click_mine(mine_strength)
 	return
-	
-	
+
 func _dwarf_button() -> void:
 	controls_ui.click_dwarf()
 	return

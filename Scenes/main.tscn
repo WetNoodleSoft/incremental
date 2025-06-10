@@ -13,16 +13,19 @@ bg_color = Color(0.229022, 0.149152, 0.145437, 1)
 bg_color = Color(0.229022, 0.149152, 0.145437, 1)
 
 [node name="Main" type="Control"]
+z_index = -1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_kry3j")
-tick_interval = 1.0
+tick_interval = 0.1
 
 [node name="ControlsUI" type="AspectRatioContainer" parent="."]
+z_index = -1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,48 +34,70 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 stretch_mode = 3
 alignment_vertical = 2
 script = ExtResource("2_21xkr")
 
 [node name="ButtonPanel" type="PanelContainer" parent="ControlsUI"]
+z_index = -1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_go701")
 
 [node name="MarginContainer" type="MarginContainer" parent="ControlsUI/ButtonPanel"]
+z_index = -1
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
 [node name="ControlButtons" type="BoxContainer" parent="ControlsUI/ButtonPanel/MarginContainer"]
+z_index = -1
 layout_mode = 2
+mouse_filter = 2
 alignment = 1
 
 [node name="MineButton" type="Button" parent="ControlsUI/ButtonPanel/MarginContainer/ControlButtons"]
+process_mode = 3
+z_index = 100
+z_as_relative = false
 layout_mode = 2
+mouse_default_cursor_shape = 3
+action_mode = 0
 text = "Mine"
 
 [node name="Spacer" type="Control" parent="ControlsUI/ButtonPanel/MarginContainer/ControlButtons"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
+mouse_filter = 2
 
 [node name="DwarfButton" type="Button" parent="ControlsUI/ButtonPanel/MarginContainer/ControlButtons"]
+z_index = 10
+z_as_relative = false
 layout_mode = 2
+mouse_default_cursor_shape = 3
 text = "Dwarf"
 
 [node name="Spacer2" type="Control" parent="ControlsUI/ButtonPanel/MarginContainer/ControlButtons"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
+mouse_filter = 2
 
 [node name="ToolButton" type="Button" parent="ControlsUI/ButtonPanel/MarginContainer/ControlButtons"]
+z_index = 10
+z_as_relative = false
 layout_mode = 2
+mouse_default_cursor_shape = 3
 text = "Tool"
 
 [node name="InventoryUI" type="AspectRatioContainer" parent="."]
+z_index = -1
+z_as_relative = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -81,17 +106,21 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
+mouse_filter = 2
 alignment_horizontal = 0
 script = ExtResource("3_6bp64")
+metadata/_edit_lock_ = true
 
 [node name="InventoryPanel" type="PanelContainer" parent="InventoryUI"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_5a7ea")
 
 [node name="MarginContainer" type="MarginContainer" parent="InventoryUI/InventoryPanel"]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
@@ -100,10 +129,12 @@ theme_override_constants/margin_bottom = 5
 [node name="GridContainer" type="GridContainer" parent="InventoryUI/InventoryPanel/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
+mouse_filter = 2
 columns = 2
 
 [node name="MarginEarth" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("4_344ge")
 
 [node name="Earth" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginEarth"]
@@ -119,10 +150,12 @@ vertical_alignment = 1
 
 [node name="MarginEarthQuant" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("4_344ge")
 
 [node name="EarthQuant" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginEarthQuant"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("5_ynf5e")
 text = "0.0"
 fit_content = true
@@ -131,6 +164,7 @@ vertical_alignment = 1
 
 [node name="MarginCoal" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("4_344ge")
 
 [node name="Coal" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginCoal"]
@@ -146,10 +180,12 @@ vertical_alignment = 1
 
 [node name="MarginCoalQuant" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("4_344ge")
 
 [node name="CoalQuant" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginCoalQuant"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("5_ynf5e")
 text = "0.0"
 fit_content = true
@@ -158,6 +194,7 @@ vertical_alignment = 1
 
 [node name="MarginStone" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("4_344ge")
 
 [node name="Stone" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginStone"]
@@ -173,10 +210,12 @@ vertical_alignment = 1
 
 [node name="MarginStoneQuant" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("4_344ge")
 
 [node name="StoneQuant" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginStoneQuant"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("5_ynf5e")
 text = "0.0"
 fit_content = true
@@ -185,6 +224,7 @@ vertical_alignment = 1
 
 [node name="MarginIron" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("4_344ge")
 
 [node name="Iron" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginIron"]
@@ -200,10 +240,12 @@ vertical_alignment = 1
 
 [node name="MarginIronQuant" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("4_344ge")
 
 [node name="IronQuant" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginIronQuant"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("5_ynf5e")
 text = "0.0"
 fit_content = true
@@ -212,6 +254,7 @@ vertical_alignment = 1
 
 [node name="MarginSteel" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("4_344ge")
 
 [node name="Steel" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginSteel"]
@@ -227,10 +270,12 @@ vertical_alignment = 1
 
 [node name="MarginSteelQuant" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("4_344ge")
 
 [node name="SteelQuant" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginSteelQuant"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("5_ynf5e")
 text = "0.0"
 fit_content = true
@@ -239,6 +284,7 @@ vertical_alignment = 1
 
 [node name="MarginTitanium" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("4_344ge")
 
 [node name="Titanium" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginTitanium"]
@@ -254,10 +300,12 @@ vertical_alignment = 1
 
 [node name="MarginTitaniumQuant" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("4_344ge")
 
 [node name="TitaniumQuant" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginTitaniumQuant"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("5_ynf5e")
 text = "0.0"
 fit_content = true
@@ -266,6 +314,7 @@ vertical_alignment = 1
 
 [node name="MarginGold" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("4_344ge")
 
 [node name="Gold" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginGold"]
@@ -281,10 +330,12 @@ vertical_alignment = 1
 
 [node name="MarginGoldQuant" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("4_344ge")
 
 [node name="GoldQuant" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginGoldQuant"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("5_ynf5e")
 text = "0.0"
 fit_content = true
@@ -293,6 +344,7 @@ vertical_alignment = 1
 
 [node name="MarginPlatinum" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("4_344ge")
 
 [node name="Platinum" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginPlatinum"]
@@ -309,10 +361,12 @@ vertical_alignment = 1
 
 [node name="MarginPlatinumQuant" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("4_344ge")
 
 [node name="PlatinumQuant" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginPlatinumQuant"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("5_ynf5e")
 text = "0.0"
 fit_content = true
@@ -321,6 +375,7 @@ vertical_alignment = 1
 
 [node name="MarginOrichalcum" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("4_344ge")
 
 [node name="Orichalcum" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginOrichalcum"]
@@ -336,10 +391,12 @@ vertical_alignment = 1
 
 [node name="MarginOrichalcumQuant" type="MarginContainer" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("4_344ge")
 
 [node name="OrichalcumQuant" type="RichTextLabel" parent="InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginOrichalcumQuant"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("5_ynf5e")
 text = "0.0"
 fit_content = true
@@ -355,6 +412,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.180005, 0.180005, 0.180005, 1)
 metadata/_edit_lock_ = true
 
