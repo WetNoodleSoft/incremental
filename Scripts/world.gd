@@ -34,7 +34,6 @@ func _process(_delta: float) -> void:
 func _on_timer_timeout() -> void:
 	inventory = INVENTORY.check_inventory()
 	inventory_ui.update_labels(inventory)
-	print(Time.get_datetime_string_from_system())
 	return
 	
 
