@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=13 format=4 uid="uid://b8k7he35y0nbg"]
 
-[ext_resource type="FontFile" uid="uid://h0w2r7u6tnim" path="res://Resources/Unitblock-JpJma.ttf" id="1_t5khu"]
+[ext_resource type="FontFile" uid="uid://h0w2r7u6tnim" path="res://Assets/Fonts/Unitblock-JpJma.ttf" id="1_t5khu"]
 
 [sub_resource type="FontVariation" id="FontVariation_cpy1i"]
 base_font = ExtResource("1_t5khu")

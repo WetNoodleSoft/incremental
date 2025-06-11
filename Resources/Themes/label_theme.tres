@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://cinfxqyorjqfa"]
 
-[ext_resource type="FontFile" uid="uid://h0w2r7u6tnim" path="res://Resources/Unitblock-JpJma.ttf" id="1_md165"]
+[ext_resource type="FontFile" uid="uid://h0w2r7u6tnim" path="res://Assets/Fonts/Unitblock-JpJma.ttf" id="1_md165"]
 
 [resource]
 default_font = ExtResource("1_md165")

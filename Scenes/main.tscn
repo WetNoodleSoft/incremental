@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://c61ve04onl3vb"]
+[gd_scene load_steps=9 format=3 uid="uid://c61ve04onl3vb"]
 
 [ext_resource type="Script" uid="uid://bxj2hqisr0btm" path="res://Scripts/world.gd" id="1_kry3j"]
 [ext_resource type="Script" uid="uid://bcuvhpkxi4rv7" path="res://Scripts/controls_ui.gd" id="2_21xkr"]
 [ext_resource type="Script" uid="uid://dscma456prepg" path="res://Scripts/inventory_ui.gd" id="3_6bp64"]
 [ext_resource type="Theme" uid="uid://b8k7he35y0nbg" path="res://Resources/Themes/info_resource_count_theme.tres" id="4_344ge"]
 [ext_resource type="Theme" uid="uid://cinfxqyorjqfa" path="res://Resources/Themes/label_theme.tres" id="5_ynf5e"]
+[ext_resource type="AudioStream" uid="uid://b3wv0drhor3e3" path="res://Assets/Audio/Epic Triumphant Main.wav" id="6_21xkr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_go701"]
 bg_color = Color(0.229022, 0.149152, 0.145437, 1)
@@ -415,3 +416,8 @@ mouse_filter = 2
 color = Color(0.180005, 0.180005, 0.180005, 1)
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_21xkr")
+volume_db = -3.0
+autoplay = true
