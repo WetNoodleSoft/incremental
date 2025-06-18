@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cim5smxqf5o57"]
+
+[ext_resource type="Texture2D" uid="uid://bhtk77gy43ht8" path="res://Assets/Images/PH_background.png" id="1_a02cp"]
+
+[node name="World" type="Node2D"]
+z_index = -1000
+z_as_relative = false
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(1800, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+texture = ExtResource("1_a02cp")
+centered = false

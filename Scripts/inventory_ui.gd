@@ -14,7 +14,17 @@ class_name InventoryUI
 
 
 func update_labels(inventory: Dictionary) -> void: #called on tick to update labels
-	var inventory_labels: Dictionary = {"earth": earth, "coal": coal, "stone": stone, "iron": iron, "steel": steel, "titanium": titanium, "gold": gold, "platinum": platinum, "orichalcum": orichalcum}
+	var inventory_labels: Dictionary = {
+		"earth": earth, 
+		"coal": coal, 
+		"stone": stone, 
+		"iron": iron, 
+		"steel": steel, 
+		"titanium": titanium, 
+		"gold": gold, 
+		"platinum": platinum, 
+		"orichalcum": orichalcum
+		}
 	for item: String in inventory:
 		var label: String = item
 		inventory_labels[label].text = str(inventory[item])

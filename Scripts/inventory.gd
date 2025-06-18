@@ -3,7 +3,7 @@ class_name ResourceDatabase
 
 @export var resources: Dictionary = {}
 
-func initialize_inventory() -> Dictionary: #called at game start
+func initialize_inventory() -> Dictionary: #called at new game start
 	resources = {
 	"earth" : 50.0,
 	"coal" : 10.0,
