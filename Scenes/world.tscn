@@ -1,13 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://cim5smxqf5o57"]
+[gd_scene load_steps=3 format=3 uid="uid://cim5smxqf5o57"]
 
 [ext_resource type="Texture2D" uid="uid://bhtk77gy43ht8" path="res://Assets/Images/PH_background.png" id="1_a02cp"]
+[ext_resource type="Script" uid="uid://d2l1vcovks0im" path="res://Scripts/world.gd" id="1_go701"]
 
 [node name="World" type="Node2D"]
 z_index = -1000
 z_as_relative = false
+script = ExtResource("1_go701")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
-repeat_size = Vector2(1800, 0)
+repeat_size = Vector2(3600, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
 texture = ExtResource("1_a02cp")

@@ -44,8 +44,7 @@ color = Color(0.180005, 0.180005, 0.180005, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_21xkr")
-volume_db = -3.0
-autoplay = true
+volume_db = -30.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0

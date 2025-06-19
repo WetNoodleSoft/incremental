@@ -9,6 +9,7 @@ extends Control
 @onready var tool_button: Button = $CanvasLayer/ControlsUI/ButtonPanel/MarginContainer/ControlButtons/ToolButton
 @onready var pause_button: Button = $CanvasLayer/ControlsUI/ButtonPanel/MarginContainer/ControlButtons/PauseButton
 @onready var raw_materials: Dictionary = {}
+var world_instance: Node
 
 @export var tick_interval: float = 1.0
 @export var mine_strength: float = 5.0
@@ -26,7 +27,7 @@ func _ready() -> void:
 	dwarf_button.pressed.connect(_dwarf_button)
 	tool_button.pressed.connect(_tool_button)
 	pause_button.pressed.connect(_pause_button)
-	var world_instance: Node = world_scene.instantiate()
+	world_instance = world_scene.instantiate()
 	add_child(world_instance)
 	return
 	
@@ -38,7 +39,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_timer_timeout() -> void: # called each game clock 'tick'
-	
+	world_instance.world_tick()
 	#print("tick")
 	return
 
