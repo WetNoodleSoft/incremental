@@ -7,7 +7,7 @@ extends Control
 @onready var mine_button: Button = $CanvasLayer/ControlsUI/ButtonPanel/MarginContainer/ControlButtons/MineButton
 @onready var dwarf_button: Button = $CanvasLayer/ControlsUI/ButtonPanel/MarginContainer/ControlButtons/DwarfButton
 @onready var tool_button: Button = $CanvasLayer/ControlsUI/ButtonPanel/MarginContainer/ControlButtons/ToolButton
-@onready var pause_button: Button = $CanvasLayer/ControlsUI/ButtonPanel/MarginContainer/ControlButtons/PauseButton
+@onready var pause_button: TextureButton = $CanvasLayer/ControlsUI/ButtonPanel/MarginContainer/ControlButtons/PauseButton
 @onready var raw_materials: Dictionary = {}
 var world_instance: Node
 
@@ -19,22 +19,21 @@ var world_scene: PackedScene = preload("res://Scenes/world.tscn")
 
 func _ready() -> void:
 	raw_materials = INVENTORY.check_inventory() # sets inventory to resource values (new game or loaded)
-	inventory_ui.update_labels(raw_materials) # sets initial inventory labels
+	inventory_ui.update_inventory_count(raw_materials) # sets initial inventory labels
 	clock.start(tick_interval) # start game clock and connect timeout
 	clock.timeout.connect(_on_timer_timeout)
-	print("Timer start")
 	mine_button.pressed.connect(_mine_button) # attach UI control buttons
 	dwarf_button.pressed.connect(_dwarf_button)
 	tool_button.pressed.connect(_tool_button)
 	pause_button.pressed.connect(_pause_button)
-	world_instance = world_scene.instantiate()
+	world_instance = world_scene.instantiate() # start world scene
 	add_child(world_instance)
 	return
 	
 	
 func _process(_delta: float) -> void:
 	raw_materials = INVENTORY.check_inventory()
-	inventory_ui.update_labels(raw_materials)
+	inventory_ui.update_inventory_count(raw_materials)
 	return
 
 
@@ -60,10 +59,5 @@ func _tool_button() -> void:
 
 
 func _pause_button() -> void:
-	if clock.is_paused():
-		print("Resume")
-		clock.paused = false
-	else:
-		print("Pause")
-		clock.paused = true
+	controls_ui.click_pause()
 	return

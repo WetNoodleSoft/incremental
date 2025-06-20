@@ -13,7 +13,7 @@ class_name InventoryUI
 @onready var orichalcum: RichTextLabel = $InventoryPanel/MarginContainer/GridContainer/MarginOrichalcumQuant/OrichalcumQuant
 
 
-func update_labels(inventory: Dictionary) -> void: #called on tick to update labels
+func update_inventory_count (inventory: Dictionary) -> void: #called on tick to update labels
 	var inventory_labels: Dictionary = {
 		"earth": earth, 
 		"coal": coal, 
