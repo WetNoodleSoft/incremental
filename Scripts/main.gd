@@ -8,18 +8,18 @@ extends Control
 @onready var dwarf_button: Button = $CanvasLayer/ControlsUI/ButtonPanel/MarginContainer/ControlButtons/DwarfButton
 @onready var tool_button: Button = $CanvasLayer/ControlsUI/ButtonPanel/MarginContainer/ControlButtons/ToolButton
 @onready var pause_button: TextureButton = $CanvasLayer/ControlsUI/ButtonPanel/MarginContainer/ControlButtons/PauseButton
-@onready var raw_materials: Dictionary = {}
+@onready var inventory: Dictionary = {}
 var world_instance: Node
 
 @export var tick_interval: float = 1.0
 @export var mine_strength: float = 5.0
 
-const INVENTORY: ResourceDatabase = preload("res://Resources/inventory.tres")
+const STOCK: ResourceDatabase = preload("res://Resources/inventory.tres")
 var world_scene: PackedScene = preload("res://Scenes/world.tscn")
 
 func _ready() -> void:
-	raw_materials = INVENTORY.check_inventory() # sets inventory to resource values (new game or loaded)
-	inventory_ui.update_inventory_count(raw_materials) # sets initial inventory labels
+	inventory = STOCK.check_inventory() # Pulls inventory from database
+	inventory_ui.update_ui_labels(inventory) # Pass quantities to UI labels
 	clock.start(tick_interval) # start game clock and connect timeout
 	clock.timeout.connect(_on_timer_timeout)
 	mine_button.pressed.connect(_mine_button) # attach UI control buttons
@@ -32,14 +32,13 @@ func _ready() -> void:
 	
 	
 func _process(_delta: float) -> void:
-	raw_materials = INVENTORY.check_inventory()
-	inventory_ui.update_inventory_count(raw_materials)
+	inventory = STOCK.check_inventory()
+	inventory_ui.update_ui_labels(inventory)
 	return
 
 
 func _on_timer_timeout() -> void: # called each game clock 'tick'
-	world_instance.world_tick()
-	#print("tick")
+	inventory = world_instance.world_tick(inventory)
 	return
 
 

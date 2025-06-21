@@ -4,3 +4,20 @@
 
 [resource]
 script = ExtResource("1_oodtb")
+materials = {
+"ale": 100.0,
+"coal": 10.0,
+"earth": 50.0,
+"gold": 0.0,
+"iron": 0.0,
+"orichalcum": 0.0,
+"platinum": 0.0,
+"steel": 0.0,
+"stone": 0.0,
+"titanium": 0.0
+}
+inventory = {
+"alecows": 0,
+"dwarves": 0,
+"mine_carts": 0
+}

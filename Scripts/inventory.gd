@@ -1,33 +1,37 @@
-class_name ResourceDatabase
+class_name ResourceDatabase extends Resource
 # Central dictionary resource for storing/iterating in-game resource counts.
 
-@export var resources: Dictionary = {}
+var inventory: Dictionary = {}
 
-func initialize_inventory() -> Dictionary: #called at new game start
-	resources = {
-	"earth" : 50.0,
-	"coal" : 10.0,
-	"stone" : 0.0,
-	"iron" : 0.0,
-	"steel" : 0.0,
-	"titanium": 0.0,
-	"gold" : 0.0,
-	"platinum" : 0.0,
-	"orichalcum" : 0.0,
+func initialize() -> Dictionary: #called at new game start
+	inventory = {
+	"ale" : 100,
+	"earth" : 50,
+	"coal" : 10,
+	"stone" : 0,
+	"iron" : 0,
+	"steel" : 0,
+	"titanium": 0,
+	"gold" : 0,
+	"platinum" : 0,
+	"orichalcum" : 0,
+	"dwarves" : 0,
+	"ale_cows" : 0,
+	"mine_carts" : 0
 	}
-	print("Resources initialized: ", resources)
-	return resources
+	print("Inventory initialized: ", inventory)
+	return inventory
 	
 
-func load_saved_inventory(saved_inventory: Dictionary) -> Dictionary:
-	resources = saved_inventory
-	return resources
+func load_save(saved_inventory: Dictionary) -> Dictionary:
+	inventory = saved_inventory
+	return inventory
 
 
 func check_inventory() -> Dictionary:
-	return resources
+	return inventory
 
 
 func update_inventory(label: String, change_amount: float) -> void:
-	resources[label] += change_amount
+	inventory[label] += change_amount
 	return

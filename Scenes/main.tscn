@@ -176,6 +176,36 @@ size_flags_vertical = 0
 mouse_filter = 2
 columns = 2
 
+[node name="MarginAle" type="MarginContainer" parent="CanvasLayer/InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("4_344ge")
+
+[node name="Ale" type="RichTextLabel" parent="CanvasLayer/InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginAle"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("5_ynf5e")
+text = "Ale"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginAleQuant" type="MarginContainer" parent="CanvasLayer/InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("4_344ge")
+
+[node name="AleQuant" type="RichTextLabel" parent="CanvasLayer/InventoryUI/InventoryPanel/MarginContainer/GridContainer/MarginAleQuant"]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("5_ynf5e")
+text = "0.0"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
 [node name="MarginEarth" type="MarginContainer" parent="CanvasLayer/InventoryUI/InventoryPanel/MarginContainer/GridContainer"]
 layout_mode = 2
 mouse_filter = 2
@@ -459,7 +489,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 mouse_filter = 2
 alignment_horizontal = 2
-script = ExtResource("3_6bp64")
 
 [node name="InventoryPanel" type="PanelContainer" parent="CanvasLayer/WorldUI"]
 layout_mode = 2

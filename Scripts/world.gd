@@ -1,6 +1,8 @@
 extends Node2D
 
+@onready var inventory: Dictionary = {}
 
-func world_tick() -> void:
+func world_tick(inventory: Dictionary) -> Dictionary:
 	print("tick")
-	return
+	inventory["iron"] += 1
+	return inventory

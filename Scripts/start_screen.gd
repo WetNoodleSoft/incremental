@@ -18,6 +18,6 @@ func _process(_delta: float) -> void:
 
 
 func _new_game_pressed() -> void:
-	MATERIALINVENTORY.initialize_inventory() #instruct inventory database to set resources to new game values
+	MATERIALINVENTORY.initialize() #instruct inventory database to set resources to new game values
 	get_tree().change_scene_to_packed(main_scene)
 	return

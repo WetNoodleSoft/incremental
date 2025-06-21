@@ -1,0 +1,181 @@
+{
+  "main": {
+    "id": "24cb1f48c33e5c05",
+    "type": "split",
+    "children": [
+      {
+        "id": "539b3a16213cc651",
+        "type": "tabs",
+        "dimension": 99.99999999999999,
+        "children": [
+          {
+            "id": "289adc25ecaf6b0d",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Scene Tree Visual.canvas",
+                "viewState": {
+                  "x": 145.73185307059097,
+                  "y": 24.945645028325515,
+                  "zoom": -0.3333333333333333
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "Scene Tree Visual"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8c626c743587c4fa",
+    "type": "split",
+    "children": [
+      {
+        "id": "34d4202163d96fac",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1f92b8f176e2cfa9",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "6b421f3deeb9ea3d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "dc75e2c6f7554947",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "746f7360fb48497f",
+    "type": "split",
+    "children": [
+      {
+        "id": "1accce613b73cba0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "568a28dda0561a29",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Scene Tree Visual.canvas",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Scene Tree Visual"
+            }
+          },
+          {
+            "id": "1701c1d0df73b502",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Scene Tree Visual.canvas",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Scene Tree Visual"
+            }
+          },
+          {
+            "id": "aaf28ccef758a149",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "8180c5b249a5ec54",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Scene Tree Visual.canvas",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Scene Tree Visual"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "289adc25ecaf6b0d",
+  "lastOpenFiles": [
+    "create a link.md",
+    "Welcome.md",
+    "Scene Tree Visual.canvas"
+  ]
+}
