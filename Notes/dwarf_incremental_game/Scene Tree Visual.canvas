@@ -1,14 +1,15 @@
 {
 	"nodes":[
-		{"id":"e8a88f40a889d66a","x":-520,"y":-280,"width":160,"height":60,"type":"text","text":"Start Screen"},
-		{"id":"549bb0ccdfe237e0","x":-275,"y":-250,"width":200,"height":60,"color":"6","type":"text","text":"Inventory(initialize)"},
-		{"id":"bbb08e574c5ebd3f","x":20,"y":-220,"width":120,"height":60,"color":"3","type":"text","text":"Main"},
-		{"id":"91a511aada7d9550","x":-200,"y":-40,"width":160,"height":60,"color":"5","type":"text","text":"World (tick)"},
-		{"id":"c184efb85521a856","x":-2,"y":120,"width":202,"height":60,"color":"6","type":"text","text":"Inventory (update)"},
-		{"id":"ef506bc606346188","x":-2,"y":220,"width":200,"height":60,"color":"2","type":"text","text":"UI (update labels)"}
+		{"id":"bbb08e574c5ebd3f","type":"text","text":"Main","x":20,"y":-220,"width":120,"height":60,"color":"3"},
+		{"id":"91a511aada7d9550","type":"text","text":"World (tick)","x":-200,"y":-40,"width":160,"height":60,"color":"5"},
+		{"id":"e8a88f40a889d66a","type":"text","text":"Start Screen","x":-255,"y":-360,"width":160,"height":60},
+		{"id":"549bb0ccdfe237e0","type":"text","text":"Inventory(initialize)","x":-275,"y":-220,"width":200,"height":60,"color":"6"},
+		{"id":"e9f98125eb585a0a","type":"text","text":"Back to [[Overview]]","x":-2,"y":-360,"width":185,"height":60},
+		{"id":"c184efb85521a856","type":"text","text":"Inventory (update)","x":120,"y":20,"width":202,"height":60,"color":"6"},
+		{"id":"ef506bc606346188","type":"text","text":"UI (update labels)","x":120,"y":120,"width":200,"height":60,"color":"2"}
 	],
 	"edges":[
-		{"id":"e1a186a669dad5f0","fromNode":"e8a88f40a889d66a","fromSide":"right","toNode":"549bb0ccdfe237e0","toSide":"left"},
+		{"id":"e1a186a669dad5f0","fromNode":"e8a88f40a889d66a","fromSide":"bottom","toNode":"549bb0ccdfe237e0","toSide":"top"},
 		{"id":"bf8a9d5ee9c5a6b3","fromNode":"549bb0ccdfe237e0","fromSide":"right","toNode":"bbb08e574c5ebd3f","toSide":"left"},
 		{"id":"4d7c6b789a216708","fromNode":"bbb08e574c5ebd3f","fromSide":"bottom","toNode":"91a511aada7d9550","toSide":"top"},
 		{"id":"7cce5f6e206d15c4","fromNode":"91a511aada7d9550","fromSide":"bottom","toNode":"c184efb85521a856","toSide":"left"},

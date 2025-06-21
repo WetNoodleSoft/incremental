@@ -32,6 +32,7 @@ func check_inventory() -> Dictionary:
 	return inventory
 
 
-func update_inventory(label: String, change_amount: float) -> void:
-	inventory[label] += change_amount
-	return
+func update_inventory(changes: Dictionary) -> Dictionary:
+	for items in changes:
+		inventory[items] += changes[items]
+	return inventory

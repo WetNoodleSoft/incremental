@@ -12,17 +12,14 @@
             "id": "289adc25ecaf6b0d",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "Scene Tree Visual.canvas",
-                "viewState": {
-                  "x": 145.73185307059097,
-                  "y": 24.945645028325515,
-                  "zoom": -0.3333333333333333
-                }
+                "file": "Overview.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "Scene Tree Visual"
+              "icon": "lucide-file",
+              "title": "Overview"
             }
           }
         ]
@@ -98,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Scene Tree Visual.canvas",
+                "file": "Overview.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Scene Tree Visual"
+              "title": "Backlinks for Overview"
             }
           },
           {
@@ -117,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Scene Tree Visual.canvas",
+                "file": "Overview.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Scene Tree Visual"
+              "title": "Outgoing links from Overview"
             }
           },
           {
@@ -146,13 +143,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Scene Tree Visual.canvas",
+                "file": "Overview.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Scene Tree Visual"
+              "title": "Outline of Overview"
             }
           }
         ]
@@ -174,8 +171,8 @@
   },
   "active": "289adc25ecaf6b0d",
   "lastOpenFiles": [
-    "create a link.md",
-    "Welcome.md",
-    "Scene Tree Visual.canvas"
+    "Scene Tree Visual.canvas",
+    "Overview.md",
+    "create a link.md"
   ]
 }

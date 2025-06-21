@@ -12,8 +12,10 @@ class_name ControlsUI
 const INVENTORY: ResourceDatabase = preload("res://Resources/inventory.tres")
 
 
-func click_mine(mine_strength: float) -> void:
-	INVENTORY.update_inventory("earth", mine_strength)
+func click_mine(mine_strength: int) -> void:
+	var changes: Dictionary = {}
+	changes["stone"] = mine_strength
+	INVENTORY.update_inventory(changes)
 	print("rock & stone!")
 	return
 

@@ -34,9 +34,4 @@ class_name InventoryUI
 func update_ui_labels (inventory: Dictionary) -> void: # update quantity labels
 	for item: String in inventory:
 		inventory_labels[item].text = str(inventory[item])
-	#
-	#for item: String in inventory:
-		#var label: String = item
-		#inventory_labels[label].text = str(inventory[item])
-		#pass
 	return

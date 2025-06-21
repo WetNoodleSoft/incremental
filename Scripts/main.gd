@@ -11,14 +11,14 @@ extends Control
 @onready var inventory: Dictionary = {}
 var world_instance: Node
 
-@export var tick_interval: float = 1.0
-@export var mine_strength: float = 5.0
+@export var tick_interval: int = 1
+@export var mine_strength: int = 5
 
-const STOCK: ResourceDatabase = preload("res://Resources/inventory.tres")
+const INVENTORY: ResourceDatabase = preload("res://Resources/inventory.tres")
 var world_scene: PackedScene = preload("res://Scenes/world.tscn")
 
 func _ready() -> void:
-	inventory = STOCK.check_inventory() # Pulls inventory from database
+	inventory = INVENTORY.check_inventory() # Pulls inventory from database
 	inventory_ui.update_ui_labels(inventory) # Pass quantities to UI labels
 	clock.start(tick_interval) # start game clock and connect timeout
 	clock.timeout.connect(_on_timer_timeout)
@@ -32,7 +32,7 @@ func _ready() -> void:
 	
 	
 func _process(_delta: float) -> void:
-	inventory = STOCK.check_inventory()
+	inventory = INVENTORY.check_inventory()
 	inventory_ui.update_ui_labels(inventory)
 	return
 
